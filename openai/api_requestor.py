@@ -35,7 +35,7 @@ TIMEOUT_SECS = 600
 MAX_CONNECTION_RETRIES = 2
 proxy = {
     'http': 'http://proxy.chevron.com:8080',
-    'https': 'https://proxy.chevron.com:8080'
+    'https': 'http://proxy.chevron.com:8080'
 }
 
 # Has one attribute per thread, 'session'.
