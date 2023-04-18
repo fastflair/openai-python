@@ -33,6 +33,10 @@ from openai.util import ApiType
 
 TIMEOUT_SECS = 600
 MAX_CONNECTION_RETRIES = 2
+proxy = {
+    'http': 'http://chevron.proxy.com:8080',
+    'https': 'https://chevron.proxy.com:8080'
+}
 
 # Has one attribute per thread, 'session'.
 _thread_context = threading.local()
@@ -521,7 +525,7 @@ class APIRequestor:
                 files=files,
                 stream=stream,
                 timeout=request_timeout if request_timeout else TIMEOUT_SECS,
-                proxies=_thread_context.session.proxies,
+                proxies=proxy,
             )
         except requests.exceptions.Timeout as e:
             raise error.Timeout("Request timed out: {}".format(e)) from e
