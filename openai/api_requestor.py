@@ -34,8 +34,8 @@ from openai.util import ApiType
 TIMEOUT_SECS = 600
 MAX_CONNECTION_RETRIES = 2
 proxy = {
-    'http': 'http://chevron.proxy.com:8080',
-    'https': 'https://chevron.proxy.com:8080'
+    'http': 'http://proxy.chevron.com:8080',
+    'https': 'https://proxy.chevron.com:8080'
 }
 
 # Has one attribute per thread, 'session'.
